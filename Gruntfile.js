@@ -61,6 +61,20 @@ module.exports = function(grunt) {
             }
         },
 
+        minified : {
+            files: {
+                src: [
+                    '/js/src/**/*.js',
+                    '/js/src/*.js'
+                ],
+                dest: '/js/min/'
+            },
+            options : {
+                sourcemap: true,
+                allinone: false
+            }
+        },
+
 
 
         watch: {
@@ -105,6 +119,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-less');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
+    grunt.loadNpmTasks('grunt-minified');
 
 
 

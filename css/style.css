@@ -541,16 +541,13 @@ nav a:hover {
   padding-top: 20px;
 }
 /* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-/* ==========================================================================
    Media Queries
    ========================================================================== */
 @media only screen and (min-width: 480px) {
   /* ====================
     INTERMEDIATE: Menu
    ==================== */
-  /* line 181, less\main.less */
+  /* line 163, less\main.less */
   nav a {
     float: left;
     width: 27%;
@@ -558,22 +555,22 @@ nav a:hover {
     padding: 25px 2%;
     margin-bottom: 0;
   }
-  /* line 189, less\main.less */
+  /* line 171, less\main.less */
   nav li:first-child a {
     margin-left: 0;
   }
-  /* line 193, less\main.less */
+  /* line 175, less\main.less */
   nav li:last-child a {
     margin-right: 0;
   }
   /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
-  /* line 201, less\main.less */
+  /* line 183, less\main.less */
   nav ul li {
     display: inline;
   }
-  /* line 205, less\main.less */
+  /* line 187, less\main.less */
   .oldie nav a {
     margin: 0 0.7%;
   }
@@ -582,7 +579,7 @@ nav a:hover {
   /* ====================
     WIDE: CSS3 Effects
    ==================== */
-  /* line 216, less\main.less */
+  /* line 198, less\main.less */
   .header-container,
   .main aside {
     box-shadow: 0 5px 10px #aaa;
@@ -590,11 +587,11 @@ nav a:hover {
   /* ============
     WIDE: Menu
    ============ */
-  /* line 227, less\main.less */
+  /* line 209, less\main.less */
   .title {
     float: left;
   }
-  /* line 231, less\main.less */
+  /* line 213, less\main.less */
   nav {
     float: right;
     width: 38%;
@@ -602,12 +599,12 @@ nav a:hover {
   /* ============
     WIDE: Main
    ============ */
-  /* line 240, less\main.less */
+  /* line 222, less\main.less */
   .main article {
     float: left;
     width: 57%;
   }
-  /* line 245, less\main.less */
+  /* line 227, less\main.less */
   .main aside {
     float: right;
     width: 28%;
@@ -617,7 +614,7 @@ nav a:hover {
   /* ===============
     Maximal Width
    =============== */
-  /* line 257, less\main.less */
+  /* line 239, less\main.less */
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */
@@ -627,12 +624,12 @@ nav a:hover {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 267, less\main.less */
+/* line 249, less\main.less */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
-/* line 272, less\main.less */
+/* line 254, less\main.less */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -643,7 +640,7 @@ nav a:hover {
   position: absolute;
   width: 1px;
 }
-/* line 283, less\main.less */
+/* line 265, less\main.less */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -653,21 +650,21 @@ nav a:hover {
   position: static;
   width: auto;
 }
-/* line 293, less\main.less */
+/* line 275, less\main.less */
 .invisible {
   visibility: hidden;
 }
-/* line 297, less\main.less */
+/* line 279, less\main.less */
 .clearfix:before,
 .clearfix:after {
   content: " ";
   display: table;
 }
-/* line 303, less\main.less */
+/* line 285, less\main.less */
 .clearfix:after {
   clear: both;
 }
-/* line 307, less\main.less */
+/* line 289, less\main.less */
 .clearfix {
   *zoom: 1;
 }
@@ -675,7 +672,7 @@ nav a:hover {
    Print styles
    ========================================================================== */
 @media print {
-  /* line 316, less\main.less */
+  /* line 298, less\main.less */
   *,
   *:before,
   *:after {
@@ -684,57 +681,57 @@ nav a:hover {
     box-shadow: none !important;
     text-shadow: none !important;
   }
-  /* line 325, less\main.less */
+  /* line 307, less\main.less */
   a,
   a:visited {
     text-decoration: underline;
   }
-  /* line 330, less\main.less */
+  /* line 312, less\main.less */
   a[href]:after {
     content: " (" attr(href) ")";
   }
-  /* line 334, less\main.less */
+  /* line 316, less\main.less */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  /* line 338, less\main.less */
+  /* line 320, less\main.less */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
-  /* line 343, less\main.less */
+  /* line 325, less\main.less */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-  /* line 349, less\main.less */
+  /* line 331, less\main.less */
   thead {
     display: table-header-group;
   }
-  /* line 353, less\main.less */
+  /* line 335, less\main.less */
   tr,
   img {
     page-break-inside: avoid;
   }
-  /* line 358, less\main.less */
+  /* line 340, less\main.less */
   img {
     max-width: 100% !important;
   }
-  /* line 362, less\main.less */
+  /* line 344, less\main.less */
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-  /* line 369, less\main.less */
+  /* line 351, less\main.less */
   h2,
   h3 {
     page-break-after: avoid;
   }
 }
-/* line 1, less\laba.less */
+/* line 1, less\navigation.less */
 #menu {
   position: fixed;
   top: 0;
@@ -744,4 +741,58 @@ nav a:hover {
   width: 100%;
   padding: 0;
   margin: 0;
+}
+/* line 6, less\slides.less */
+#intro {
+  background-image: url('../images/slides/01.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 11, less\slides.less */
+#about {
+  background-image: url('../images/slides/02.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 16, less\slides.less */
+#clients {
+  background-image: url('../images/slides/04.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 21, less\slides.less */
+#contacts {
+  background-image: url('../images/slides/05.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 27, less\slides.less */
+.works.work-01 {
+  background-image: url('../images/works/01.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 31, less\slides.less */
+.works.work-02 {
+  background-image: url('../images/works/02.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 35, less\slides.less */
+.works.work-03 {
+  background-image: url('../images/works/03.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 39, less\slides.less */
+.works.work-04 {
+  background-image: url('../images/works/04.png');
+  background-position: center center;
+  background-size: cover;
+}
+/* line 43, less\slides.less */
+.works.work-05 {
+  background-image: url('../images/works/05.png');
+  background-position: center center;
+  background-size: cover;
 }
