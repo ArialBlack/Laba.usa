@@ -14,11 +14,11 @@
         <link rel="stylesheet" type="text/css" href="/bower_components/fullpage.js/jquery.fullPage.css" />
         <link rel="stylesheet" href="css/style.css">
 
-        <script src="/bower_components/dist/jquery.js"></script>
+        <script src="/bower_components/jquery/dist/jquery.js"></script>
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
         <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
         <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
-        <script src="/bower_components/boostrap/js/modal.js"></script>
+        <script src="/bower_components/bootstrap/js/modal.js"></script>
 
 
 
@@ -40,12 +40,24 @@
         <div id="main-slides">
 
             <div id="intro" class="section">
-                <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                    Launch demo modal
-                </button>
+                <div class="img-holder">
+                    <img src="images/slides/01.png">
+                </div>
             </div>
 
-            <div id="about" class="section"></div>
+            <div id="about" class="section">
+                <video loop muted controls="false" data-autoplay>
+                    <source src="/images/slides/02-video.mp4" type="video/mp4">
+                </video>
+
+                <h2>It’S ALIVE!</h2>
+                <h3>We are the Schoedinger’s cat lab — creative web production</h3>
+                <span class="del"></span>
+                <p class="text">We cooperate with agencies of different types to create the best solutions for our clients together.
+                    Our solutions and products are websites, promotional pages, mobile applications and web applications for social networks.
+                </p>
+                <a class="btn btn-outline" data-toggle="modal" data-target="#aboutModal">Details</a>
+            </div>
 
             <div id="works" class="section">
                 <div class="slide works work-01"></div>
@@ -64,12 +76,12 @@
 
 
         <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                        <h4 class="modal-title" id="aboutModalLabel">Modal title</h4>
                     </div>
                     <div class="modal-body">
                         ...
@@ -85,7 +97,7 @@
 
 
 
-        <script src="js/package.js"></script>
+        <script src="js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

@@ -1,8 +1,7 @@
 $(document).ready(function() {
 
-    var audio = new Audio('slide.m4a');
-    audio.play();
-
+    //var audio = new Audio('slide.m4a');
+    //audio.play();
 
     $('#main-slides').fullpage({
         anchors: ['firstPage', 'secondPage', '3rdPage', '4thpage'],
@@ -17,6 +16,12 @@ $(document).ready(function() {
         onSlideLeave: function(anchorLink, index, slideIndex, direction){
             console.log("----------------");
             console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+        },
+
+        afterRender: function () {
+
+            //playing the video
+            //$('#about video').get(0).play();
         }
     });
 });

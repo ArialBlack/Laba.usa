@@ -64,17 +64,28 @@ module.exports = function(grunt) {
         minified : {
             files: {
                 src: [
-                    '/js/src/**/*.js',
-                    '/js/src/*.js'
+                    //'/bower_components/jquery/dist/jquery.js',
+                    //'js/vendor/modernizr-2.8.3-respond-1.4.2.min.js',
+                    //'/bower_components/fullpage.js/vendors/jquery.easings.min.js',
+                    //'/bower_components/fullpage.js/jquery.fullPage.js',
+                    //'/bower_components/bootstrap/js/modal.js',
+                    '/js/*.js'
                 ],
                 dest: '/js/min/'
             },
             options : {
                 sourcemap: true,
-                allinone: false
+                allinone: false,
+                //dest_filename: '/js/package.js'
             }
         },
 
+        tinypng_compression: {
+            options: {},
+            files: {
+                'images/min': ['images/slides/*.png'],
+            },
+        },
 
 
         watch: {
@@ -97,6 +108,13 @@ module.exports = function(grunt) {
                 tasks: ['less', 'postcss']
             },
 
+            minified: {
+                files: [
+                    '/js/main.js'
+                ],
+                tasks: ['minified']
+            }
+
         },
         
         postcss: {
@@ -108,7 +126,7 @@ module.exports = function(grunt) {
             dist: {
               src: 'css/style.css'
             }
-        }, 
+        }
 
     });
 
@@ -120,9 +138,8 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-minified');
-
-
+    grunt.loadNpmTasks('grunt-tinypng-compression');
 
     // register tasks
-    grunt.registerTask('default', ['clean', 'svgmin_icons', 'svgstore', 'clean:sprite', 'less', 'postcss', 'watch']);
+    grunt.registerTask('default', ['clean', 'svgmin_icons', 'svgstore', 'clean:sprite', 'less', 'postcss', 'minified', 'tinypng_compression', 'watch']);
 };

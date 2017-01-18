@@ -393,19 +393,172 @@ td,
 th {
   padding: 0;
 }
-/*! HTML5 Boilerplate v5.0 | MIT License | http://h5bp.com/ */
-/* line 3, less\main.less */
+/* line 11, bower_components\bootstrap\less\modals.less */
+.modal-open {
+  overflow: hidden;
+}
+/* line 16, bower_components\bootstrap\less\modals.less */
+.modal {
+  display: none;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+}
+/* line 32, bower_components\bootstrap\less\modals.less */
+.modal.fade .modal-dialog {
+  transform: translate(0, -25%);
+  transition: transform 0.3s ease-out;
+}
+/* line 36, bower_components\bootstrap\less\modals.less */
+.modal.in .modal-dialog {
+  transform: translate(0, 0);
+}
+/* line 38, bower_components\bootstrap\less\modals.less */
+.modal-open .modal {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/* line 44, bower_components\bootstrap\less\modals.less */
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+}
+/* line 51, bower_components\bootstrap\less\modals.less */
+.modal-content {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  outline: 0;
+}
+/* line 64, bower_components\bootstrap\less\modals.less */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1040;
+  background-color: #000;
+}
+/* line 73, bower_components\bootstrap\less\modals.less */
+.modal-backdrop.fade {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+/* line 74, bower_components\bootstrap\less\modals.less */
+.modal-backdrop.in {
+  opacity: 0.5;
+  filter: alpha(opacity=50);
+}
+/* line 79, bower_components\bootstrap\less\modals.less */
+.modal-header {
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+}
+/* line 85, bower_components\bootstrap\less\modals.less */
+.modal-header .close {
+  margin-top: -2px;
+}
+/* line 90, bower_components\bootstrap\less\modals.less */
+.modal-title {
+  margin: 0;
+  line-height: 1.42857143;
+}
+/* line 97, bower_components\bootstrap\less\modals.less */
+.modal-body {
+  position: relative;
+  padding: 15px;
+}
+/* line 103, bower_components\bootstrap\less\modals.less */
+.modal-footer {
+  padding: 15px;
+  text-align: right;
+  border-top: 1px solid #e5e5e5;
+}
+/* line 110, bower_components\bootstrap\less\modals.less */
+.modal-footer .btn + .btn {
+  margin-left: 5px;
+  margin-bottom: 0;
+}
+/* line 115, bower_components\bootstrap\less\modals.less */
+.modal-footer .btn-group .btn + .btn {
+  margin-left: -1px;
+}
+/* line 119, bower_components\bootstrap\less\modals.less */
+.modal-footer .btn-block + .btn-block {
+  margin-left: 0;
+}
+/* line 125, bower_components\bootstrap\less\modals.less */
+.modal-scrollbar-measure {
+  position: absolute;
+  top: -9999px;
+  width: 50px;
+  height: 50px;
+  overflow: scroll;
+}
+@media (min-width: 768px) {
+  /* line 136, bower_components\bootstrap\less\modals.less */
+  .modal-dialog {
+    width: 600px;
+    margin: 30px auto;
+  }
+  /* line 140, bower_components\bootstrap\less\modals.less */
+  .modal-content {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+  /* line 145, bower_components\bootstrap\less\modals.less */
+  .modal-sm {
+    width: 300px;
+  }
+}
+@media (min-width: 992px) {
+  /* line 149, bower_components\bootstrap\less\modals.less */
+  .modal-lg {
+    width: 900px;
+  }
+}
+@font-face {
+  font-family: 'FranklinGothic-Heavy';
+  src: url('../fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/FranklinGothic-Heavy.woff') format('woff'), url('../fonts/FranklinGothic-Heavy.ttf') format('truetype'), url('../fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'FranklinGothic-DemiCond';
+  src: url('../fonts/FranklinGothic-DemiCond.eot?#iefix') format('embedded-opentype'), url('../fonts/FranklinGothic-DemiCond.woff') format('woff'), url('../fonts/FranklinGothic-DemiCond.ttf') format('truetype'), url('../fonts/FranklinGothic-DemiCond.svg#FranklinGothic-DemiCond') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'arsenalregular';
+  src: url('../fonts/arsenal-regular.eot');
+  src: url('../fonts/arsenal-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/arsenal-regular.woff') format('woff'), url('../fonts/arsenal-regular.ttf.gz') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+/* line 33, less\main.less */
 html {
   color: #222;
   font-size: 1em;
   line-height: 1.4;
 }
-/* line 9, less\main.less */
+/* line 39, less\main.less */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
 }
-/* line 14, less\main.less */
+/* line 44, less\main.less */
 ::-moz-selection {
   background: #b3d4fc;
   text-shadow: none;
@@ -414,7 +567,7 @@ html {
   background: #b3d4fc;
   text-shadow: none;
 }
-/* line 19, less\main.less */
+/* line 49, less\main.less */
 hr {
   display: block;
   height: 1px;
@@ -423,7 +576,7 @@ hr {
   margin: 1em 0;
   padding: 0;
 }
-/* line 28, less\main.less */
+/* line 58, less\main.less */
 audio,
 canvas,
 iframe,
@@ -432,17 +585,17 @@ svg,
 video {
   vertical-align: middle;
 }
-/* line 37, less\main.less */
+/* line 67, less\main.less */
 fieldset {
   border: 0;
   margin: 0;
   padding: 0;
 }
-/* line 43, less\main.less */
+/* line 73, less\main.less */
 textarea {
   resize: vertical;
 }
-/* line 47, less\main.less */
+/* line 77, less\main.less */
 .browserupgrade {
   margin: 0.2em 0;
   background: #ccc;
@@ -452,11 +605,11 @@ textarea {
 /* ===== Initializr Styles ==================================================
    Author: Jonathan Verrecchia - verekia.com/initializr/responsive-template
    ========================================================================== */
-/* line 59, less\main.less */
+/* line 89, less\main.less */
 body {
-  font: 16px/26px Helvetica, Helvetica Neue, Arial;
+  font: 16px/26px 'arsenalregular', Helvetica, Helvetica Neue, Arial;
 }
-/* line 63, less\main.less */
+/* line 93, less\main.less */
 .wrapper {
   width: 90%;
   margin: 0 5%;
@@ -464,35 +617,35 @@ body {
 /* ===================
     ALL: Orange Theme
    =================== */
-/* line 72, less\main.less */
+/* line 102, less\main.less */
 .header-container {
   border-bottom: 20px solid #e44d26;
 }
-/* line 76, less\main.less */
+/* line 106, less\main.less */
 .footer-container,
 .main aside {
   border-top: 20px solid #e44d26;
 }
-/* line 81, less\main.less */
+/* line 111, less\main.less */
 .header-container,
 .footer-container,
 .main aside {
   background: #f16529;
 }
-/* line 87, less\main.less */
+/* line 117, less\main.less */
 .title {
   color: white;
 }
 /* ==============
     MOBILE: Menu
    ============== */
-/* line 95, less\main.less */
+/* line 125, less\main.less */
 nav ul {
   margin: 0;
   padding: 0;
   list-style-type: none;
 }
-/* line 101, less\main.less */
+/* line 131, less\main.less */
 nav a {
   display: block;
   margin-bottom: 10px;
@@ -503,32 +656,32 @@ nav a {
   color: white;
   background: #e44d26;
 }
-/* line 114, less\main.less */
+/* line 144, less\main.less */
 nav a:hover,
 nav a:visited {
   color: white;
 }
-/* line 119, less\main.less */
+/* line 149, less\main.less */
 nav a:hover {
   text-decoration: underline;
 }
 /* ==============
     MOBILE: Main
    ============== */
-/* line 127, less\main.less */
+/* line 157, less\main.less */
 .main {
   padding: 30px 0;
 }
-/* line 131, less\main.less */
+/* line 161, less\main.less */
 .main article h1 {
   font-size: 2em;
 }
-/* line 135, less\main.less */
+/* line 165, less\main.less */
 .main aside {
   color: white;
   padding: 0px 5% 10px;
 }
-/* line 140, less\main.less */
+/* line 170, less\main.less */
 .footer-container footer {
   color: white;
   padding: 20px 0;
@@ -536,7 +689,7 @@ nav a:hover {
 /* ===============
     ALL: IE Fixes
    =============== */
-/* line 149, less\main.less */
+/* line 179, less\main.less */
 .ie7 .title {
   padding-top: 20px;
 }
@@ -547,7 +700,7 @@ nav a:hover {
   /* ====================
     INTERMEDIATE: Menu
    ==================== */
-  /* line 163, less\main.less */
+  /* line 193, less\main.less */
   nav a {
     float: left;
     width: 27%;
@@ -555,22 +708,22 @@ nav a:hover {
     padding: 25px 2%;
     margin-bottom: 0;
   }
-  /* line 171, less\main.less */
+  /* line 201, less\main.less */
   nav li:first-child a {
     margin-left: 0;
   }
-  /* line 175, less\main.less */
+  /* line 205, less\main.less */
   nav li:last-child a {
     margin-right: 0;
   }
   /* ========================
     INTERMEDIATE: IE Fixes
    ======================== */
-  /* line 183, less\main.less */
+  /* line 213, less\main.less */
   nav ul li {
     display: inline;
   }
-  /* line 187, less\main.less */
+  /* line 217, less\main.less */
   .oldie nav a {
     margin: 0 0.7%;
   }
@@ -579,7 +732,7 @@ nav a:hover {
   /* ====================
     WIDE: CSS3 Effects
    ==================== */
-  /* line 198, less\main.less */
+  /* line 228, less\main.less */
   .header-container,
   .main aside {
     box-shadow: 0 5px 10px #aaa;
@@ -587,11 +740,11 @@ nav a:hover {
   /* ============
     WIDE: Menu
    ============ */
-  /* line 209, less\main.less */
+  /* line 239, less\main.less */
   .title {
     float: left;
   }
-  /* line 213, less\main.less */
+  /* line 243, less\main.less */
   nav {
     float: right;
     width: 38%;
@@ -599,12 +752,12 @@ nav a:hover {
   /* ============
     WIDE: Main
    ============ */
-  /* line 222, less\main.less */
+  /* line 252, less\main.less */
   .main article {
     float: left;
     width: 57%;
   }
-  /* line 227, less\main.less */
+  /* line 257, less\main.less */
   .main aside {
     float: right;
     width: 28%;
@@ -614,7 +767,7 @@ nav a:hover {
   /* ===============
     Maximal Width
    =============== */
-  /* line 239, less\main.less */
+  /* line 269, less\main.less */
   .wrapper {
     width: 1026px;
     /* 1140px - 10% for margins */
@@ -624,12 +777,12 @@ nav a:hover {
 /* ==========================================================================
    Helper classes
    ========================================================================== */
-/* line 249, less\main.less */
+/* line 279, less\main.less */
 .hidden {
   display: none !important;
   visibility: hidden;
 }
-/* line 254, less\main.less */
+/* line 284, less\main.less */
 .visuallyhidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -640,7 +793,7 @@ nav a:hover {
   position: absolute;
   width: 1px;
 }
-/* line 265, less\main.less */
+/* line 295, less\main.less */
 .visuallyhidden.focusable:active,
 .visuallyhidden.focusable:focus {
   clip: auto;
@@ -650,29 +803,37 @@ nav a:hover {
   position: static;
   width: auto;
 }
-/* line 275, less\main.less */
+/* line 305, less\main.less */
 .invisible {
   visibility: hidden;
 }
-/* line 279, less\main.less */
+/* line 309, less\main.less */
 .clearfix:before,
-.clearfix:after {
+.clearfix:after,
+.modal-header:before,
+.modal-header:after,
+.modal-footer:before,
+.modal-footer:after {
   content: " ";
   display: table;
 }
-/* line 285, less\main.less */
-.clearfix:after {
+/* line 315, less\main.less */
+.clearfix:after,
+.modal-header:after,
+.modal-footer:after {
   clear: both;
 }
-/* line 289, less\main.less */
-.clearfix {
+/* line 319, less\main.less */
+.clearfix,
+.modal-header,
+.modal-footer {
   *zoom: 1;
 }
 /* ==========================================================================
    Print styles
    ========================================================================== */
 @media print {
-  /* line 298, less\main.less */
+  /* line 328, less\main.less */
   *,
   *:before,
   *:after {
@@ -681,51 +842,51 @@ nav a:hover {
     box-shadow: none !important;
     text-shadow: none !important;
   }
-  /* line 307, less\main.less */
+  /* line 337, less\main.less */
   a,
   a:visited {
     text-decoration: underline;
   }
-  /* line 312, less\main.less */
+  /* line 342, less\main.less */
   a[href]:after {
     content: " (" attr(href) ")";
   }
-  /* line 316, less\main.less */
+  /* line 346, less\main.less */
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  /* line 320, less\main.less */
+  /* line 350, less\main.less */
   a[href^="#"]:after,
   a[href^="javascript:"]:after {
     content: "";
   }
-  /* line 325, less\main.less */
+  /* line 355, less\main.less */
   pre,
   blockquote {
     border: 1px solid #999;
     page-break-inside: avoid;
   }
-  /* line 331, less\main.less */
+  /* line 361, less\main.less */
   thead {
     display: table-header-group;
   }
-  /* line 335, less\main.less */
+  /* line 365, less\main.less */
   tr,
   img {
     page-break-inside: avoid;
   }
-  /* line 340, less\main.less */
+  /* line 370, less\main.less */
   img {
     max-width: 100% !important;
   }
-  /* line 344, less\main.less */
+  /* line 374, less\main.less */
   p,
   h2,
   h3 {
     orphans: 3;
     widows: 3;
   }
-  /* line 351, less\main.less */
+  /* line 381, less\main.less */
   h2,
   h3 {
     page-break-after: avoid;
@@ -742,55 +903,119 @@ nav a:hover {
   padding: 0;
   margin: 0;
 }
-/* line 6, less\slides.less */
+/* line 1, less\slides.less */
+h1,
+h2 {
+  font-weight: normal;
+  color: black;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* line 7, less\slides.less */
+h2 {
+  font-family: 'FranklinGothic-Heavy';
+  font-size: 140px;
+  line-height: 120%;
+}
+/* line 14, less\slides.less */
+h3 {
+  font-family: 'FranklinGothic-DemiCond';
+  font-size: 60px;
+  line-height: 120%;
+}
+/* line 45, less\slides.less */
 #intro {
-  background-image: url('../images/slides/01.png');
-  background-position: center center;
-  background-size: cover;
+  background: #d0d0d0;
 }
-/* line 11, less\slides.less */
-#about {
-  background-image: url('../images/slides/02.png');
-  background-position: center center;
-  background-size: cover;
+/* line 48, less\slides.less */
+#intro .img-holder {
+  text-align: center;
+  height: 80%;
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
 }
-/* line 16, less\slides.less */
+/* line 56, less\slides.less */
+#intro .img-holder img {
+  max-width: 100%;
+  max-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 66, less\slides.less */
+#intro:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url('../images/over-texture.png') no-repeat center center;
+  background-size: cover;
+  z-index: 900;
+}
+/* line 73, less\slides.less */
+#about video::-webkit-media-controls {
+  display: none;
+}
+/* line 77, less\slides.less */
+#about video {
+  position: absolute;
+  z-index: -1;
+}
+/* line 82, less\slides.less */
+#about:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url('../images/over-texture.png') no-repeat center center;
+  background-size: cover;
+  z-index: 900;
+}
+/* line 87, less\slides.less */
 #clients {
   background-image: url('../images/slides/04.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 21, less\slides.less */
+/* line 92, less\slides.less */
 #contacts {
   background-image: url('../images/slides/05.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 27, less\slides.less */
+/* line 98, less\slides.less */
 .works.work-01 {
   background-image: url('../images/works/01.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 31, less\slides.less */
+/* line 102, less\slides.less */
 .works.work-02 {
   background-image: url('../images/works/02.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 35, less\slides.less */
+/* line 106, less\slides.less */
 .works.work-03 {
   background-image: url('../images/works/03.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 39, less\slides.less */
+/* line 110, less\slides.less */
 .works.work-04 {
   background-image: url('../images/works/04.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 43, less\slides.less */
+/* line 114, less\slides.less */
 .works.work-05 {
   background-image: url('../images/works/05.png');
   background-position: center center;
