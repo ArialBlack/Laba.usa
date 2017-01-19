@@ -29,7 +29,7 @@
         <![endif]-->
 
         <ul id="menu">
-            <li data-menuanchor="intro"><a href="#intro">Hello</a></li>
+            <li data-menuanchor="intro"><a href="#intro"><i class="icon ion-home"></i> Hello</a></li>
             <li data-menuanchor="about"><a href="#about">About us</a></li>
             <li data-menuanchor="works"><a href="#works">Works</a></li>
             <li data-menuanchor="clients"><a href="#clients">4 slide</a></li>
@@ -40,7 +40,7 @@
         <div id="main-slides">
 
             <div id="intro" class="section">
-                <div class="img-holder">
+                <div class="inner">
                     <img src="images/slides/01.png">
                 </div>
             </div>
@@ -50,21 +50,46 @@
                     <source src="/images/slides/02-video.mp4" type="video/mp4">
                 </video>
 
-                <h2>It’S ALIVE!</h2>
-                <h3>We are the Schoedinger’s cat lab — creative web production</h3>
-                <span class="del"></span>
-                <p class="text">We cooperate with agencies of different types to create the best solutions for our clients together.
-                    Our solutions and products are websites, promotional pages, mobile applications and web applications for social networks.
-                </p>
-                <a class="btn btn-outline" data-toggle="modal" data-target="#aboutModal">Details</a>
+                <div class="text-container">
+                    <h2>It’S ALIVE!</h2>
+                    <h3>We are the Schoedinger’s cat lab — creative web production</h3>
+                    <span class="del"></span>
+                    <p class="text">We cooperate with agencies of different types to create the best solutions for our clients together.
+                        Our solutions and products are websites, promotional pages, mobile applications and web applications for social networks.
+                    </p>
+                    <a class="btn btn-outline">Details</a>
+                </div>
+
             </div>
 
             <div id="works" class="section">
-                <div class="slide works work-01"></div>
-                <div class="slide works work-02"></div>
-                <div class="slide works work-03"></div>
-                <div class="slide works work-04"></div>
-                <div class="slide works work-05"></div>
+                <div class="slide works work-01">
+                    <div class="text-container">
+                        <h4>Selected works:</h4>
+                        <h2>TAXFROM.US</h2>
+                        <span class="del"></span>
+                        <h3>The online tax preparation solution for international students and workers in the USA</h3>
+                        <a class="btn btn-outline" data-toggle="modal" data-target="#wModal" data-preload="tax.html">View details</a>
+                    </div>
+                </div>
+                <div class="slide works work-02">
+                    <div class="text-container">
+                        <h4>Selected works:</h4>
+                        <h2>GUD</h2>
+                        <span class="del"></span>
+                        <h3>GUD is a brand of reliable, handy and practical backpacks, bags and travel accessories.</h3>
+                        <a class="btn btn-outline" data-toggle="modal" data-target="#wModal" data-preload="gud.html">View details</a>
+                    </div>
+                </div>
+                <div class="slide works work-03">
+
+                </div>
+                <div class="slide works work-04">
+
+                </div>
+                <div class="slide works work-05">
+
+                </div>
             </div>
 
             <div id="clients" class="section"></div>
@@ -72,30 +97,21 @@
             <div id="contacts" class="section"></div>
         </div>
 
-        <!-- Button trigger modal -->
-
-
-        <!-- Modal -->
-        <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog" aria-labelledby="aboutModalLabel">
+        <div class="modal fade" id="wModal" tabindex="-1" role="dialog" aria-labelledby="wModalLabel">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="aboutModalLabel">Modal title</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion ion-close"></i></button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        <img class="preloader" src="/images/preloader.gif" />
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion ion-close"></i></button>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
 
         <script src="js/main.js"></script>
 

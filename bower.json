@@ -17,6 +17,7 @@
   ],
   "dependencies": {
     "fullpage.js": "~2.9.2",
-    "bootstrap": "~3.3.7"
+    "bootstrap": "~3.3.7",
+    "Ionicons": "ionicons#~2.0.1"
   }
 }
