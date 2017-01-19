@@ -4620,6 +4620,340 @@ nav a:hover {
     width: 1570px;
   }
 }
+/* line 3, less\flip3dmenu.less */
+html,
+body,
+.perspective {
+  width: 100%;
+  height: 100%;
+}
+/* line 8, less\flip3dmenu.less */
+#showMenu {
+  position: fixed;
+  z-index: 999;
+  top: 10px;
+  right: 10px;
+}
+/* line 15, less\flip3dmenu.less */
+.perspective.modalview.animate {
+  background: gray url('/images/backstage-menu.jpg') no-repeat center top;
+  background-size: cover;
+}
+/* line 20, less\flip3dmenu.less */
+.perspective {
+  position: relative;
+}
+/* line 25, less\flip3dmenu.less */
+#perspective-container {
+  min-height: 100%;
+  position: relative;
+  outline: 1px solid rgba(0, 0, 0, 0);
+  z-index: 10;
+  /* reset transforms (Chrome bug) */
+  transform: translateZ(0) translateX(0) rotateY(0deg);
+}
+/* line 35, less\flip3dmenu.less */
+#perspective-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  background: rgba(0, 0, 0, 0.2);
+  /* the transition delay of the height needs to be synced with the container transition time */
+  transition: opacity 0.4s, height 0s 0.4s;
+}
+/* line 49, less\flip3dmenu.less */
+#perspective-wrapper {
+  position: relative;
+}
+/* line 53, less\flip3dmenu.less */
+.component {
+  margin: 0 auto;
+  width: 60%;
+  text-align: justify;
+  font-size: 1.5em;
+}
+/* Modal view */
+/* line 61, less\flip3dmenu.less */
+.perspective.modalview {
+  position: fixed;
+  perspective: 1500px;
+}
+/* line 70, less\flip3dmenu.less */
+.modalview #perspective-container {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* line 80, less\flip3dmenu.less */
+.modalview #perspective-wrapper {
+  -webkit-transform: translateZ(-1px);
+  /* solves a rendering bug in Chrome on Windows */
+}
+/* line 84, less\flip3dmenu.less */
+.animate #perspective-container::after {
+  opacity: 1;
+  height: 101%;
+  transition: opacity 0.3s;
+}
+/* Outer Nav */
+/* line 92, less\flip3dmenu.less */
+.outer-nav {
+  position: absolute;
+  height: auto;
+  font-size: 2em;
+}
+/* line 97, less\flip3dmenu.less */
+.outer-nav .language-switcher-locale-url {
+  margin: 0;
+  padding: 0;
+}
+/* line 101, less\flip3dmenu.less */
+.outer-nav .language-switcher-locale-url li {
+  list-style: none;
+}
+/* line 107, less\flip3dmenu.less */
+.outer-nav.vertical {
+  top: 50%;
+  transform: translateY(-50%);
+  transform-style: preserve-3d;
+}
+/* line 113, less\flip3dmenu.less */
+.outer-nav.horizontal {
+  left: 50%;
+  width: 75%;
+  max-width: 1000px;
+  text-align: center;
+  transform: translateX(-50%);
+}
+/* line 121, less\flip3dmenu.less */
+.outer-nav.left {
+  left: 25%;
+}
+/* line 125, less\flip3dmenu.less */
+.outer-nav.right {
+  right: 25%;
+}
+/* line 129, less\flip3dmenu.less */
+.outer-nav.top {
+  top: 25%;
+}
+/* line 133, less\flip3dmenu.less */
+.outer-nav.bottom {
+  bottom: 25%;
+}
+/* line 137, less\flip3dmenu.less */
+.outer-nav a {
+  display: inline-block;
+  white-space: nowrap;
+  font-weight: 300;
+  margin: 0 0 20px 0;
+  color: #fff;
+  transition: color 0.3s;
+  transform-style: preserve-3d;
+}
+/* line 147, less\flip3dmenu.less */
+.outer-nav a:hover {
+  color: #d98576;
+}
+/* line 151, less\flip3dmenu.less */
+.outer-nav.vertical a {
+  display: block;
+}
+/* line 155, less\flip3dmenu.less */
+.outer-nav.horizontal a {
+  margin: 15px 20px;
+}
+/* line 159, less\flip3dmenu.less */
+.outer-nav a::before {
+  display: inline-block;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  margin-right: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+/* Individual Effects */
+/* Effect airbnb */
+/* line 184, less\flip3dmenu.less */
+.effect-airbnb #perspective-container {
+  transition: transform 0.4s;
+  transform-origin: 50% 50%;
+}
+/* line 191, less\flip3dmenu.less */
+.effect-airbnb.animate #perspective-container {
+  transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
+}
+/* line 196, less\flip3dmenu.less */
+.no-csstransforms3d .effect-airbnb.animate #perspective-container {
+  left: 75%;
+}
+/* line 200, less\flip3dmenu.less */
+.effect-airbnb .outer-nav a {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: transform 0.4s, opacity 0.4s;
+}
+/* line 208, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a {
+  opacity: 1;
+  transform: translateX(0);
+}
+/* line 214, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(2) {
+  transition-delay: 0.04s;
+}
+/* line 219, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(3) {
+  transition-delay: 0.08s;
+}
+/* line 224, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(4) {
+  transition-delay: 0.12s;
+}
+/* line 229, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(5) {
+  transition-delay: 0.16s;
+}
+/* line 234, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(6) {
+  transition-delay: 0.2s;
+}
+/* line 239, less\flip3dmenu.less */
+.effect-airbnb.animate .outer-nav a:nth-child(7) {
+  transition-delay: 0.24s;
+}
+/* Effect Lay Down */
+/* line 245, less\flip3dmenu.less */
+.effect-laydown {
+  background: gray;
+}
+/* line 249, less\flip3dmenu.less */
+.effect-laydown #perspective-container {
+  transition: transform 0.4s;
+  transform-origin: 50% 150%;
+}
+/* line 256, less\flip3dmenu.less */
+.effect-laydown.animate #perspective-container {
+  transform: translateZ(-1500px) rotateX(80deg);
+}
+/* line 261, less\flip3dmenu.less */
+.no-csstransforms3d .effect-laydown.animate #perspective-container {
+  top: 75%;
+}
+/* line 265, less\flip3dmenu.less */
+.effect-laydown .outer-nav a {
+  opacity: 0;
+  transform: translateY(-200px) translateZ(-1000px);
+  transition: transform 0.4s, opacity 0.4s;
+}
+/* line 273, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a {
+  opacity: 1;
+  transform: translateY(0) translateZ(0);
+}
+/* line 279, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(7) {
+  transition-delay: 0.0s;
+}
+/* line 284, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(6) {
+  transition-delay: 0.04s;
+}
+/* line 289, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(5) {
+  transition-delay: 0.08s;
+}
+/* line 294, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(4) {
+  transition-delay: 0.12s;
+}
+/* line 299, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(3) {
+  transition-delay: 0.16s;
+}
+/* line 304, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:nth-child(2) {
+  transition-delay: 0.2s;
+}
+/* line 309, less\flip3dmenu.less */
+.effect-laydown.animate .outer-nav a:first-child {
+  transition-delay: 0.24s;
+}
+/* Media Queries */
+@media screen and (max-width: 77em) {
+  /* line 317, less\flip3dmenu.less */
+  .outer-nav.top {
+    top: 15%;
+  }
+  /* line 321, less\flip3dmenu.less */
+  .outer-nav.bottom {
+    bottom: 15%;
+  }
+}
+@media screen and (max-width: 36.625em), screen and (max-height: 41.75em) {
+  /* line 328, less\flip3dmenu.less */
+  .outer-nav.top {
+    top: 5%;
+  }
+  /* line 332, less\flip3dmenu.less */
+  .outer-nav.bottom {
+    bottom: 5%;
+  }
+  /* line 336, less\flip3dmenu.less */
+  .outer-nav.horizontal {
+    font-size: 1.7em;
+    width: 6.2em;
+  }
+  /* line 341, less\flip3dmenu.less */
+  .outer-nav.horizontal a {
+    display: block;
+    text-align: left;
+  }
+  /* Special Case */
+  /* line 347, less\flip3dmenu.less */
+  .effect-rotatetop .outer-nav.horizontal {
+    width: 95%;
+    bottom: auto;
+    top: 50%;
+  }
+  /* line 353, less\flip3dmenu.less */
+  .effect-rotatetop .outer-nav.horizontal a {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 31em), screen and (max-height: 36.2em) {
+  /* line 360, less\flip3dmenu.less */
+  .outer-nav.horizontal,
+  .outer-nav.vertical {
+    font-size: 1.2em;
+    width: 6.8em;
+  }
+  /* line 366, less\flip3dmenu.less */
+  .outer-nav.right {
+    right: auto;
+    left: 50%;
+  }
+}
+@media screen and (max-height: 31.6em) {
+  /* line 373, less\flip3dmenu.less */
+  .outer-nav a {
+    margin-bottom: 20px;
+  }
+}
 @font-face {
   font-family: 'FranklinGothic-Heavy';
   src: url('../fonts/FranklinGothic-Heavy.eot?#iefix') format('embedded-opentype'), url('../fonts/FranklinGothic-Heavy.woff') format('woff'), url('../fonts/FranklinGothic-Heavy.ttf') format('truetype'), url('../fonts/FranklinGothic-Heavy.svg#FranklinGothic-Heavy') format('svg');
