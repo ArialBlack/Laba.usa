@@ -4567,15 +4567,52 @@ nav a:hover {
   }
 }
 /* line 1, less\navigation.less */
+.nav-toogle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 901;
+  color: white;
+  cursor: pointer;
+  padding: 20px;
+}
+/* line 10, less\navigation.less */
+.nav-toogle.opened {
+  display: none;
+}
+/* line 15, less\navigation.less */
 #menu {
   position: fixed;
   top: 0;
   left: 0;
-  height: 40px;
-  z-index: 70;
+  height: 100%;
+  z-index: 1009;
   width: 100%;
   padding: 0;
   margin: 0;
+  display: none;
+}
+/* line 26, less\navigation.less */
+#menu.opened {
+  display: block;
+}
+/* line 30, less\navigation.less */
+#menu .ion-close {
+  float: right;
+  color: white;
+  padding: 20px;
+  cursor: pointer;
+}
+/* line 37, less\navigation.less */
+#menu .menu-bg {
+  background-image: url('/images/backstage-menu.jpg');
+  background-position: center center;
+  background-size: cover;
+  height: 100%;
+}
+/* line 43, less\navigation.less */
+#menu ul {
+  margin-top: 0;
 }
 @media (min-width: 1600px) {
   /* line 59, less\mixins.less */
@@ -4611,8 +4648,9 @@ a.btn {
   position: relative;
   z-index: 900;
   cursor: pointer;
+  text-decoration: none;
 }
-/* line 43, less\laba.less */
+/* line 44, less\laba.less */
 a.btn.btn-outline {
   display: inline-block;
   padding: 10px 40px;
@@ -4623,13 +4661,13 @@ a.btn.btn-outline {
   border: black 2px solid;
   letter-spacing: 1px;
 }
-/* line 53, less\laba.less */
+/* line 54, less\laba.less */
 a.btn.btn-outline:hover {
   color: white;
   border-color: #d98576;
   background: #d98576;
 }
-/* line 62, less\laba.less */
+/* line 63, less\laba.less */
 .modal-dialog {
   margin-right: auto;
   margin-left: auto;
@@ -4664,72 +4702,73 @@ a.btn.btn-outline:hover {
   }
 }
 @media (min-width: 1600px) {
-  /* line 66, less\laba.less */
+  /* line 67, less\laba.less */
   .modal-dialog {
     width: 1170px;
   }
 }
 @media (max-width: 767px) {
-  /* line 70, less\laba.less */
+  /* line 71, less\laba.less */
   .modal-dialog {
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* line 75, less\laba.less */
+/* line 76, less\laba.less */
 .modal-dialog .modal-header,
 .modal-dialog .modal-footer {
   border: none;
   padding: 0 0 30px 0;
   text-align: right;
 }
-/* line 81, less\laba.less */
+/* line 82, less\laba.less */
 .modal-dialog .modal-header h4,
 .modal-dialog .modal-footer h4 {
   display: none;
 }
-/* line 85, less\laba.less */
+/* line 86, less\laba.less */
 .modal-dialog .modal-header button,
 .modal-dialog .modal-footer button {
   opacity: 1;
   border: none;
   background: none;
 }
-/* line 90, less\laba.less */
+/* line 91, less\laba.less */
 .modal-dialog .modal-header button i,
 .modal-dialog .modal-footer button i {
   color: white;
 }
-/* line 96, less\laba.less */
+/* line 97, less\laba.less */
 .modal-dialog .modal-content {
   background: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
-/* line 102, less\laba.less */
+/* line 103, less\laba.less */
 .modal-dialog .modal-content .modal-body {
   background: white;
+  text-align: center;
 }
-/* line 105, less\laba.less */
+/* line 107, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body {
   display: none;
 }
-/* line 108, less\laba.less */
+/* line 110, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body.show {
   display: block;
 }
-/* line 114, less\laba.less */
+/* line 116, less\laba.less */
 .modal-dialog .modal-content .modal-body .preloader.hide {
   display: none;
 }
-/* line 119, less\laba.less */
+/* line 121, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* line 124, less\laba.less */
+/* line 126, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body img {
   max-width: 100%;
   height: auto;
@@ -4854,40 +4893,62 @@ h3 {
 /* line 104, less\slides.less */
 #clients {
   background-image: url('../images/slides/04.png');
-  background-position: center center;
-  background-size: cover;
 }
-/* line 112, less\slides.less */
+/* line 107, less\slides.less */
+#clients:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url('../images/over-texture.png') no-repeat center center;
+  background-size: cover;
+  z-index: 899;
+}
+/* line 115, less\slides.less */
 #contacts {
   background-image: url('../images/slides/05.png');
-  background-position: center center;
-  background-size: cover;
 }
-/* line 121, less\slides.less */
+/* line 118, less\slides.less */
+#contacts:after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: url('../images/over-texture.png') no-repeat center center;
+  background-size: cover;
+  z-index: 899;
+}
+/* line 127, less\slides.less */
 .works.work-01 {
   background-image: url('../images/works/01.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 125, less\slides.less */
+/* line 131, less\slides.less */
 .works.work-02 {
   background-image: url('../images/works/02.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 129, less\slides.less */
+/* line 135, less\slides.less */
 .works.work-03 {
   background-image: url('../images/works/03.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 133, less\slides.less */
+/* line 139, less\slides.less */
 .works.work-04 {
   background-image: url('../images/works/04.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 137, less\slides.less */
+/* line 143, less\slides.less */
 .works.work-05 {
   background-image: url('../images/works/05.png');
   background-position: center center;

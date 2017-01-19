@@ -19,6 +19,7 @@
         <script src="/bower_components/fullpage.js/vendors/jquery.easings.min.js"></script>
         <script src="/bower_components/fullpage.js/jquery.fullPage.js"></script>
         <script src="/bower_components/bootstrap/js/modal.js"></script>
+        <script src="/bower_components/waitForImages/dist/jquery.waitforimages.js"></script>
 
 
 
@@ -28,13 +29,21 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <ul id="menu">
-            <li data-menuanchor="intro"><a href="#intro"><i class="icon ion-home"></i> Hello</a></li>
-            <li data-menuanchor="about"><a href="#about">About us</a></li>
-            <li data-menuanchor="works"><a href="#works">Works</a></li>
-            <li data-menuanchor="clients"><a href="#clients">4 slide</a></li>
-            <li data-menuanchor="contacts"><a href="#contacts">5 slide</a></li>
-        </ul>
+        <div class="nav-toogle"><i class="ion ion-drag"></i></div>
+
+        <div id="menu">
+            <div class="menu-bg">
+                <i class="ion ion-close"></i>
+                <ul>
+                    <li data-menuanchor="intro"><a href="#intro">Hello</a></li>
+                    <li data-menuanchor="about"><a href="#about">About us</a></li>
+                    <li data-menuanchor="works"><a href="#works">Works</a></li>
+                    <li data-menuanchor="clients"><a href="#clients">Parnters</a></li>
+                    <li data-menuanchor="contacts"><a href="#contacts">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+
 
 
         <div id="main-slides">
@@ -82,13 +91,30 @@
                     </div>
                 </div>
                 <div class="slide works work-03">
-
+                    <div class="text-container">
+                        <h4>Selected works:</h4>
+                        <h2>ARTZAVOD</h2>
+                        <span class="del"></span>
+                        <h3>Creative cluster, space of opportunities, which unites People, Ideas and Work.</h3>
+                        <a class="btn btn-outline" data-toggle="modal" data-target="#wModal" data-preload="azp.html">View details</a>
+                    </div>
                 </div>
                 <div class="slide works work-04">
-
+                    <div class="text-container">
+                        <h2>Social responsibility</h2>
+                        <span class="del"></span>
+                        <h3>We bla yes we can bla bla blabla bla description</h3>
+                        <a class="btn btn-outline" data-toggle="modal" data-target="#wModal" data-preload="social.html">View details</a>
+                    </div>
                 </div>
                 <div class="slide works work-05">
-
+                    <div class="text-container">
+                        <h4>Selected works:</h4>
+                        <h2>ARGO</h2>
+                        <span class="del"></span>
+                        <h3>Some text about our corporate styles and why we are cool</h3>
+                        <a class="btn btn-outline" href="#">Download pdf</a>
+                    </div>
                 </div>
             </div>
 
@@ -105,6 +131,7 @@
                     </div>
                     <div class="modal-body">
                         <img class="preloader" src="/images/preloader.gif" />
+                        <div class="container"></div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><i class="ion ion-close"></i></button>

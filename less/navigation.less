@@ -1,10 +1,46 @@
+.nav-toogle {
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: @z-menu;
+  color: @white;
+  cursor: pointer;
+  padding: 20px;
+
+  &.opened {
+    display: none;
+  }
+}
+
 #menu {
   position: fixed;
   top: 0;
   left: 0;
-  height: 40px;
-  z-index: 70;
+  height: 100%;
+  z-index: @z-opened-menu;
   width: 100%;
   padding: 0;
   margin: 0;
+  display: none;
+
+  &.opened {
+    display: block;
+  }
+
+  .ion-close {
+    float: right;
+    color: @white;
+    padding: 20px;
+    cursor: pointer;
+  }
+
+  .menu-bg {
+    background-image: url('/images/backstage-menu.jpg');
+    .slides();
+    height: 100%;
+  }
+
+  ul {
+    margin-top: 0;
+  }
 }

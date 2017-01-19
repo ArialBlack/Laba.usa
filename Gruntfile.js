@@ -80,14 +80,6 @@ module.exports = function(grunt) {
             }
         },
 
-        tinypng_compression: {
-            options: {},
-            files: {
-                'images/min': ['images/slides/*.png'],
-            },
-        },
-
-
         watch: {
             grunt: {
                 files: ['Gruntfile.js']
@@ -138,8 +130,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-postcss');
     grunt.loadNpmTasks('grunt-minified');
-    grunt.loadNpmTasks('grunt-tinypng-compression');
 
     // register tasks
-    grunt.registerTask('default', ['clean', 'svgmin_icons', 'svgstore', 'clean:sprite', 'less', 'postcss', 'minified', 'tinypng_compression', 'watch']);
+    grunt.registerTask('default', ['clean', 'svgmin_icons', 'svgstore', 'clean:sprite', 'less', 'postcss', 'minified', 'watch']);
 };
