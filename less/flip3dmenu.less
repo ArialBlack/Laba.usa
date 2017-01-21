@@ -9,7 +9,16 @@ html, body, .perspective {
 	position: fixed;
 	z-index: 999;
 	top: 10px;
-	right: 10px;
+	right: 25px;
+	cursor: pointer;
+	color: @white;
+	font-size: 2em;
+}
+
+body.in3d {
+	#showMenu {
+		display: none;
+	}
 }
 
 .perspective.modalview.animate {
@@ -93,6 +102,7 @@ html, body, .perspective {
 	position: absolute;
 	height: auto;
 	font-size: 2em;
+	display: none;
 
 	.language-switcher-locale-url {
 		margin: 0;
@@ -101,6 +111,12 @@ html, body, .perspective {
 		li {
 			list-style: none;
 		}
+	}
+}
+
+body.in3d {
+	.outer-nav {
+		display: block;
 	}
 }
 

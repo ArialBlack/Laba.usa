@@ -1,23 +1,3 @@
-h1, h2 {
-  font-weight: normal;
-  color: @black;
-  text-shadow: -1px 0 @black, 0 1px @black, 1px 0 @black, 0 -1px @black;
-}
-
-h2 {
-  font-family: 'FranklinGothic-Heavy';
-  font-size: 140px;
-  line-height: 120%;
-  //font-size: calc(0.5rem + 2.5vmin);
-}
-
-h3 {
-  font-family: 'FranklinGothic-DemiCond';
-  font-size: 60px;
-  line-height: 120%;
-  line-height: 120%;
-}
-
 .fp-controlArrow {
   border: none;
   width: 40px;
@@ -44,9 +24,30 @@ h3 {
   }
 }
 
+#fp-nav {
+  top: 100px;
+}
+
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: @white;
+}
+
+h1, h2 {
+  font-weight: normal;
+  color: @black;
+
+  @media (min-width:768px) {
+    text-shadow: -1px 0 @black, 0 1px @black, 1px 0 @black, 0 -1px @black;
+  }
+}
+
+h2 {
+  font-family: 'FranklinGothic-Heavy';
+}
+
+h3 {
+  font-family: 'FranklinGothic-DemiCond';
 }
 
 .section {
@@ -58,12 +59,58 @@ h3 {
     margin-right: auto;
     position: relative;
   }
+
+  h2 {
+    margin: 0;
+    font-size: 10em;
+    line-height: 120%;
+  }
+
+  h3 {
+    font-size: 24px;
+    line-height: 120%;
+
+    @media (min-width:768px) {
+      font-size: 3em;
+    }
+
+    @media (min-width:992px) {}
+
+    @media (min-width:1200px) {}
+
+    @media (min-width: 1600px) {}
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 120%;
+
+    @media (min-width:992px) {
+      font-size: 2em;
+    }
+
+    @media (min-width:1200px) {
+      font-size: 1.5em;
+    }
+  }
+
+  .text + .btn {
+    margin-top: 30px;
+  }
+
+  .del {
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: @black;
+    margin-bottom: 40px;
+  }
 }
 
 /////////////////////////////////////////////////////
-/// Intro
+/// Hello
 /////////////////////////////////////////////////////
-#intro {
+#slide1 {
   background: #d0d0d0;
 
   img {
@@ -83,26 +130,51 @@ h3 {
 /////////////////////////////////////////////////////
 /// About
 /////////////////////////////////////////////////////
-#about {
+#slide2 {
   video::-webkit-media-controls {
     display: none;
   }
 
+  /*&:after {
+    .over-texture()
+  }*/
+
   video {
-    position: absolute;
-    z-index: -1;
+    width: 90%;
+    height: 30%;
+
+    @media (min-width:450px) {
+      height: 40%;
+    }
+
+    @media (min-width:768px) {
+      width: 50%;
+      position: absolute;
+      z-index: -1;
+    }
+
   }
 
-  &:after {
-    .over-texture()
+  .text-container {
+    margin-left: auto;
+    margin-right: 5%;
+    width: 90%;
+    height: 50%;
+    font-size: 100%;
+
+    @media (min-width:768px) {
+      width: 45%;
+      height: auto;
+    }
   }
 }
 
 /////////////////////////////////////////////////////
 /// Clients
 /////////////////////////////////////////////////////
-#clients {
+#slide4 {
   background-image: url('../images/slides/04.png');
+  background-color: @white;
 
   &:after {
     .over-texture()
@@ -112,8 +184,9 @@ h3 {
 /////////////////////////////////////////////////////
 /// Contacts
 /////////////////////////////////////////////////////
-#contacts {
+#slide5 {
   background-image: url('../images/slides/05.png');
+  background-color: @white;
 
   &:after {
     .over-texture()
@@ -143,5 +216,45 @@ h3 {
   &.work-05 {
     background-image: url('../images/works/05.png');
     .slides();
+  }
+
+  .text-container {
+    color: @white;
+    position: relative;
+    width: 50%;
+    text-shadow: 20px 20px 5px rgba(0, 0, 0, 0.5);
+    float: right;
+    margin-right: 50px;
+
+    a.btn {
+      color: @white;
+      border-color: @white;
+
+      &:hover {
+        border-color: @pale-red;
+      }
+    }
+
+    &.t3d {
+      -webkit-perspective: 1000px;
+      perspective: 1000px;
+      transform: skewX(20deg);
+
+      .text-container-inner {
+        -webkit-transform: rotateX(24deg) rotateY(-12deg);
+        transform: rotateX(24deg) rotateY(-12deg);
+      }
+    }
+
+    h2 {
+      color: @white;
+      display: inline;
+      text-shadow: -1px 0 @white, 0 1px @white, 1px 0 @white, 0 -1px @white;
+    }
+
+    h4 {
+      margin: 0;
+    }
+
   }
 }

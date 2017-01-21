@@ -4566,54 +4566,6 @@ nav a:hover {
     page-break-after: avoid;
   }
 }
-/* line 1, less\navigation.less */
-.nav-toogle {
-  position: fixed;
-  right: 0;
-  top: 0;
-  z-index: 901;
-  color: white;
-  cursor: pointer;
-  padding: 20px;
-}
-/* line 10, less\navigation.less */
-.nav-toogle.opened {
-  display: none;
-}
-/* line 15, less\navigation.less */
-#menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  z-index: 1009;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  display: none;
-}
-/* line 26, less\navigation.less */
-#menu.opened {
-  display: block;
-}
-/* line 30, less\navigation.less */
-#menu .ion-close {
-  float: right;
-  color: white;
-  padding: 20px;
-  cursor: pointer;
-}
-/* line 37, less\navigation.less */
-#menu .menu-bg {
-  background-image: url('/images/backstage-menu.jpg');
-  background-position: center center;
-  background-size: cover;
-  height: 100%;
-}
-/* line 43, less\navigation.less */
-#menu ul {
-  margin-top: 0;
-}
 @media (min-width: 1600px) {
   /* line 59, less\mixins.less */
   .XLcontainer {
@@ -4632,18 +4584,25 @@ body,
   position: fixed;
   z-index: 999;
   top: 10px;
-  right: 10px;
+  right: 25px;
+  cursor: pointer;
+  color: white;
+  font-size: 2em;
 }
-/* line 15, less\flip3dmenu.less */
+/* line 19, less\flip3dmenu.less */
+body.in3d #showMenu {
+  display: none;
+}
+/* line 24, less\flip3dmenu.less */
 .perspective.modalview.animate {
   background: gray url('/images/backstage-menu.jpg') no-repeat center top;
   background-size: cover;
 }
-/* line 20, less\flip3dmenu.less */
+/* line 29, less\flip3dmenu.less */
 .perspective {
   position: relative;
 }
-/* line 25, less\flip3dmenu.less */
+/* line 34, less\flip3dmenu.less */
 #perspective-container {
   min-height: 100%;
   position: relative;
@@ -4652,7 +4611,7 @@ body,
   /* reset transforms (Chrome bug) */
   transform: translateZ(0) translateX(0) rotateY(0deg);
 }
-/* line 35, less\flip3dmenu.less */
+/* line 44, less\flip3dmenu.less */
 #perspective-container::after {
   content: '';
   position: absolute;
@@ -4665,11 +4624,11 @@ body,
   /* the transition delay of the height needs to be synced with the container transition time */
   transition: opacity 0.4s, height 0s 0.4s;
 }
-/* line 49, less\flip3dmenu.less */
+/* line 58, less\flip3dmenu.less */
 #perspective-wrapper {
   position: relative;
 }
-/* line 53, less\flip3dmenu.less */
+/* line 62, less\flip3dmenu.less */
 .component {
   margin: 0 auto;
   width: 60%;
@@ -4677,12 +4636,12 @@ body,
   font-size: 1.5em;
 }
 /* Modal view */
-/* line 61, less\flip3dmenu.less */
+/* line 70, less\flip3dmenu.less */
 .perspective.modalview {
   position: fixed;
   perspective: 1500px;
 }
-/* line 70, less\flip3dmenu.less */
+/* line 79, less\flip3dmenu.less */
 .modalview #perspective-container {
   position: absolute;
   overflow: hidden;
@@ -4692,40 +4651,45 @@ body,
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 80, less\flip3dmenu.less */
+/* line 89, less\flip3dmenu.less */
 .modalview #perspective-wrapper {
   -webkit-transform: translateZ(-1px);
   /* solves a rendering bug in Chrome on Windows */
 }
-/* line 84, less\flip3dmenu.less */
+/* line 93, less\flip3dmenu.less */
 .animate #perspective-container::after {
   opacity: 1;
   height: 101%;
   transition: opacity 0.3s;
 }
 /* Outer Nav */
-/* line 92, less\flip3dmenu.less */
+/* line 101, less\flip3dmenu.less */
 .outer-nav {
   position: absolute;
   height: auto;
   font-size: 2em;
+  display: none;
 }
-/* line 97, less\flip3dmenu.less */
+/* line 107, less\flip3dmenu.less */
 .outer-nav .language-switcher-locale-url {
   margin: 0;
   padding: 0;
 }
-/* line 101, less\flip3dmenu.less */
+/* line 111, less\flip3dmenu.less */
 .outer-nav .language-switcher-locale-url li {
   list-style: none;
 }
-/* line 107, less\flip3dmenu.less */
+/* line 118, less\flip3dmenu.less */
+body.in3d .outer-nav {
+  display: block;
+}
+/* line 123, less\flip3dmenu.less */
 .outer-nav.vertical {
   top: 50%;
   transform: translateY(-50%);
   transform-style: preserve-3d;
 }
-/* line 113, less\flip3dmenu.less */
+/* line 129, less\flip3dmenu.less */
 .outer-nav.horizontal {
   left: 50%;
   width: 75%;
@@ -4733,23 +4697,23 @@ body,
   text-align: center;
   transform: translateX(-50%);
 }
-/* line 121, less\flip3dmenu.less */
+/* line 137, less\flip3dmenu.less */
 .outer-nav.left {
   left: 25%;
 }
-/* line 125, less\flip3dmenu.less */
+/* line 141, less\flip3dmenu.less */
 .outer-nav.right {
   right: 25%;
 }
-/* line 129, less\flip3dmenu.less */
+/* line 145, less\flip3dmenu.less */
 .outer-nav.top {
   top: 25%;
 }
-/* line 133, less\flip3dmenu.less */
+/* line 149, less\flip3dmenu.less */
 .outer-nav.bottom {
   bottom: 25%;
 }
-/* line 137, less\flip3dmenu.less */
+/* line 153, less\flip3dmenu.less */
 .outer-nav a {
   display: inline-block;
   white-space: nowrap;
@@ -4759,19 +4723,19 @@ body,
   transition: color 0.3s;
   transform-style: preserve-3d;
 }
-/* line 147, less\flip3dmenu.less */
+/* line 163, less\flip3dmenu.less */
 .outer-nav a:hover {
   color: #d98576;
 }
-/* line 151, less\flip3dmenu.less */
+/* line 167, less\flip3dmenu.less */
 .outer-nav.vertical a {
   display: block;
 }
-/* line 155, less\flip3dmenu.less */
+/* line 171, less\flip3dmenu.less */
 .outer-nav.horizontal a {
   margin: 15px 20px;
 }
-/* line 159, less\flip3dmenu.less */
+/* line 175, less\flip3dmenu.less */
 .outer-nav a::before {
   display: inline-block;
   speak: none;
@@ -4788,168 +4752,168 @@ body,
 }
 /* Individual Effects */
 /* Effect airbnb */
-/* line 184, less\flip3dmenu.less */
+/* line 200, less\flip3dmenu.less */
 .effect-airbnb #perspective-container {
   transition: transform 0.4s;
   transform-origin: 50% 50%;
 }
-/* line 191, less\flip3dmenu.less */
+/* line 207, less\flip3dmenu.less */
 .effect-airbnb.animate #perspective-container {
   transform: translateZ(-1500px) translateX(100%) rotateY(-45deg);
 }
-/* line 196, less\flip3dmenu.less */
+/* line 212, less\flip3dmenu.less */
 .no-csstransforms3d .effect-airbnb.animate #perspective-container {
   left: 75%;
 }
-/* line 200, less\flip3dmenu.less */
+/* line 216, less\flip3dmenu.less */
 .effect-airbnb .outer-nav a {
   opacity: 0;
   transform: translateX(-150px);
   transition: transform 0.4s, opacity 0.4s;
 }
-/* line 208, less\flip3dmenu.less */
+/* line 224, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a {
   opacity: 1;
   transform: translateX(0);
 }
-/* line 214, less\flip3dmenu.less */
+/* line 230, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(2) {
   transition-delay: 0.04s;
 }
-/* line 219, less\flip3dmenu.less */
+/* line 235, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(3) {
   transition-delay: 0.08s;
 }
-/* line 224, less\flip3dmenu.less */
+/* line 240, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(4) {
   transition-delay: 0.12s;
 }
-/* line 229, less\flip3dmenu.less */
+/* line 245, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(5) {
   transition-delay: 0.16s;
 }
-/* line 234, less\flip3dmenu.less */
+/* line 250, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(6) {
   transition-delay: 0.2s;
 }
-/* line 239, less\flip3dmenu.less */
+/* line 255, less\flip3dmenu.less */
 .effect-airbnb.animate .outer-nav a:nth-child(7) {
   transition-delay: 0.24s;
 }
 /* Effect Lay Down */
-/* line 245, less\flip3dmenu.less */
+/* line 261, less\flip3dmenu.less */
 .effect-laydown {
   background: gray;
 }
-/* line 249, less\flip3dmenu.less */
+/* line 265, less\flip3dmenu.less */
 .effect-laydown #perspective-container {
   transition: transform 0.4s;
   transform-origin: 50% 150%;
 }
-/* line 256, less\flip3dmenu.less */
+/* line 272, less\flip3dmenu.less */
 .effect-laydown.animate #perspective-container {
   transform: translateZ(-1500px) rotateX(80deg);
 }
-/* line 261, less\flip3dmenu.less */
+/* line 277, less\flip3dmenu.less */
 .no-csstransforms3d .effect-laydown.animate #perspective-container {
   top: 75%;
 }
-/* line 265, less\flip3dmenu.less */
+/* line 281, less\flip3dmenu.less */
 .effect-laydown .outer-nav a {
   opacity: 0;
   transform: translateY(-200px) translateZ(-1000px);
   transition: transform 0.4s, opacity 0.4s;
 }
-/* line 273, less\flip3dmenu.less */
+/* line 289, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a {
   opacity: 1;
   transform: translateY(0) translateZ(0);
 }
-/* line 279, less\flip3dmenu.less */
+/* line 295, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(7) {
   transition-delay: 0.0s;
 }
-/* line 284, less\flip3dmenu.less */
+/* line 300, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(6) {
   transition-delay: 0.04s;
 }
-/* line 289, less\flip3dmenu.less */
+/* line 305, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(5) {
   transition-delay: 0.08s;
 }
-/* line 294, less\flip3dmenu.less */
+/* line 310, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(4) {
   transition-delay: 0.12s;
 }
-/* line 299, less\flip3dmenu.less */
+/* line 315, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(3) {
   transition-delay: 0.16s;
 }
-/* line 304, less\flip3dmenu.less */
+/* line 320, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:nth-child(2) {
   transition-delay: 0.2s;
 }
-/* line 309, less\flip3dmenu.less */
+/* line 325, less\flip3dmenu.less */
 .effect-laydown.animate .outer-nav a:first-child {
   transition-delay: 0.24s;
 }
 /* Media Queries */
 @media screen and (max-width: 77em) {
-  /* line 317, less\flip3dmenu.less */
+  /* line 333, less\flip3dmenu.less */
   .outer-nav.top {
     top: 15%;
   }
-  /* line 321, less\flip3dmenu.less */
+  /* line 337, less\flip3dmenu.less */
   .outer-nav.bottom {
     bottom: 15%;
   }
 }
 @media screen and (max-width: 36.625em), screen and (max-height: 41.75em) {
-  /* line 328, less\flip3dmenu.less */
+  /* line 344, less\flip3dmenu.less */
   .outer-nav.top {
     top: 5%;
   }
-  /* line 332, less\flip3dmenu.less */
+  /* line 348, less\flip3dmenu.less */
   .outer-nav.bottom {
     bottom: 5%;
   }
-  /* line 336, less\flip3dmenu.less */
+  /* line 352, less\flip3dmenu.less */
   .outer-nav.horizontal {
     font-size: 1.7em;
     width: 6.2em;
   }
-  /* line 341, less\flip3dmenu.less */
+  /* line 357, less\flip3dmenu.less */
   .outer-nav.horizontal a {
     display: block;
     text-align: left;
   }
   /* Special Case */
-  /* line 347, less\flip3dmenu.less */
+  /* line 363, less\flip3dmenu.less */
   .effect-rotatetop .outer-nav.horizontal {
     width: 95%;
     bottom: auto;
     top: 50%;
   }
-  /* line 353, less\flip3dmenu.less */
+  /* line 369, less\flip3dmenu.less */
   .effect-rotatetop .outer-nav.horizontal a {
     display: inline-block;
   }
 }
 @media screen and (max-width: 31em), screen and (max-height: 36.2em) {
-  /* line 360, less\flip3dmenu.less */
+  /* line 376, less\flip3dmenu.less */
   .outer-nav.horizontal,
   .outer-nav.vertical {
     font-size: 1.2em;
     width: 6.8em;
   }
-  /* line 366, less\flip3dmenu.less */
+  /* line 382, less\flip3dmenu.less */
   .outer-nav.right {
     right: auto;
     left: 50%;
   }
 }
 @media screen and (max-height: 31.6em) {
-  /* line 373, less\flip3dmenu.less */
+  /* line 389, less\flip3dmenu.less */
   .outer-nav a {
     margin-bottom: 20px;
   }
@@ -4991,17 +4955,29 @@ a.btn.btn-outline {
   color: black;
   text-transform: uppercase;
   font-family: 'FranklinGothic-DemiCond';
-  font-size: 28px;
+  font-size: 3em;
   border: black 2px solid;
   letter-spacing: 1px;
 }
-/* line 54, less\laba.less */
+@media (min-width: 992px) {
+  /* line 54, less\laba.less */
+  a.btn.btn-outline {
+    font-size: 2.5em;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 58, less\laba.less */
+  a.btn.btn-outline {
+    font-size: 2em;
+  }
+}
+/* line 62, less\laba.less */
 a.btn.btn-outline:hover {
   color: white;
   border-color: #d98576;
   background: #d98576;
 }
-/* line 63, less\laba.less */
+/* line 71, less\laba.less */
 .modal-dialog {
   margin-right: auto;
   margin-left: auto;
@@ -5036,108 +5012,89 @@ a.btn.btn-outline:hover {
   }
 }
 @media (min-width: 1600px) {
-  /* line 67, less\laba.less */
+  /* line 75, less\laba.less */
   .modal-dialog {
     width: 1170px;
   }
 }
 @media (max-width: 767px) {
-  /* line 71, less\laba.less */
+  /* line 79, less\laba.less */
   .modal-dialog {
     padding-left: 0;
     padding-right: 0;
   }
 }
-/* line 76, less\laba.less */
+/* line 84, less\laba.less */
 .modal-dialog .modal-header,
 .modal-dialog .modal-footer {
   border: none;
   padding: 0 0 30px 0;
   text-align: right;
 }
-/* line 82, less\laba.less */
+/* line 90, less\laba.less */
 .modal-dialog .modal-header h4,
 .modal-dialog .modal-footer h4 {
   display: none;
 }
-/* line 86, less\laba.less */
+/* line 94, less\laba.less */
 .modal-dialog .modal-header button,
 .modal-dialog .modal-footer button {
   opacity: 1;
   border: none;
   background: none;
 }
-/* line 91, less\laba.less */
+/* line 99, less\laba.less */
 .modal-dialog .modal-header button i,
 .modal-dialog .modal-footer button i {
   color: white;
 }
-/* line 97, less\laba.less */
+/* line 105, less\laba.less */
 .modal-dialog .modal-content {
   background: none;
   border: none;
   border-radius: 0;
   box-shadow: none;
 }
-/* line 103, less\laba.less */
+/* line 111, less\laba.less */
 .modal-dialog .modal-content .modal-body {
   background: white;
   text-align: center;
 }
-/* line 107, less\laba.less */
+/* line 115, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body {
   display: none;
 }
-/* line 110, less\laba.less */
+/* line 118, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body.show {
   display: block;
 }
-/* line 116, less\laba.less */
+/* line 124, less\laba.less */
 .modal-dialog .modal-content .modal-body .preloader.hide {
   display: none;
 }
-/* line 121, less\laba.less */
+/* line 129, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body {
   text-align: center;
   padding-top: 30px;
   padding-bottom: 30px;
 }
-/* line 126, less\laba.less */
+/* line 134, less\laba.less */
 .modal-dialog .modal-content .modal-body .field-body img {
   max-width: 100%;
   height: auto;
 }
 /* line 1, less\slides.less */
-h1,
-h2 {
-  font-weight: normal;
-  color: black;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-/* line 7, less\slides.less */
-h2 {
-  font-family: 'FranklinGothic-Heavy';
-  font-size: 140px;
-  line-height: 120%;
-}
-/* line 14, less\slides.less */
-h3 {
-  font-family: 'FranklinGothic-DemiCond';
-  font-size: 60px;
-  line-height: 120%;
-}
-/* line 21, less\slides.less */
 .fp-controlArrow {
   border: none;
   width: 40px;
   height: 40px;
   text-align: center;
 }
-/* line 27, less\slides.less */
+/* line 7, less\slides.less */
 .fp-controlArrow:hover {
   text-shadow: 3px 1px 9px #000000;
 }
-/* line 31, less\slides.less */
+/* line 11, less\slides.less */
 .fp-controlArrow.fp-next:after,
 .fp-controlArrow.fp-prev:after {
   display: inline-block;
@@ -5154,20 +5111,45 @@ h3 {
   color: white;
   font-size: 40px;
 }
-/* line 38, less\slides.less */
+/* line 18, less\slides.less */
 .fp-controlArrow.fp-prev:after {
   content: '\f124';
 }
-/* line 42, less\slides.less */
+/* line 22, less\slides.less */
 .fp-controlArrow.fp-next:after {
   content: '\f125';
 }
-/* line 47, less\slides.less */
+/* line 27, less\slides.less */
+#fp-nav {
+  top: 100px;
+}
+/* line 31, less\slides.less */
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background: white;
 }
-/* line 53, less\slides.less */
+/* line 36, less\slides.less */
+h1,
+h2 {
+  font-weight: normal;
+  color: black;
+}
+@media (min-width: 768px) {
+  /* line 40, less\slides.less */
+  h1,
+  h2 {
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  }
+}
+/* line 45, less\slides.less */
+h2 {
+  font-family: 'FranklinGothic-Heavy';
+}
+/* line 49, less\slides.less */
+h3 {
+  font-family: 'FranklinGothic-DemiCond';
+}
+/* line 54, less\slides.less */
 .section .inner {
   text-align: center;
   height: 80%;
@@ -5176,12 +5158,58 @@ h3 {
   margin-right: auto;
   position: relative;
 }
-/* line 66, less\slides.less */
-#intro {
-  background: #d0d0d0;
+/* line 63, less\slides.less */
+.section h2 {
+  margin: 0;
+  font-size: 10em;
+  line-height: 120%;
 }
 /* line 69, less\slides.less */
-#intro img {
+.section h3 {
+  font-size: 24px;
+  line-height: 120%;
+}
+@media (min-width: 768px) {
+  /* line 73, less\slides.less */
+  .section h3 {
+    font-size: 3em;
+  }
+}
+/* line 84, less\slides.less */
+.section .text {
+  font-size: 16px;
+  line-height: 120%;
+}
+@media (min-width: 992px) {
+  /* line 88, less\slides.less */
+  .section .text {
+    font-size: 2em;
+  }
+}
+@media (min-width: 1200px) {
+  /* line 92, less\slides.less */
+  .section .text {
+    font-size: 1.5em;
+  }
+}
+/* line 97, less\slides.less */
+.section .text + .btn {
+  margin-top: 30px;
+}
+/* line 101, less\slides.less */
+.section .del {
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: black;
+  margin-bottom: 40px;
+}
+/* line 113, less\slides.less */
+#slide1 {
+  background: #d0d0d0;
+}
+/* line 116, less\slides.less */
+#slide1 img {
   max-width: 100%;
   max-height: 100%;
   position: absolute;
@@ -5189,8 +5217,8 @@ h3 {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/* line 78, less\slides.less */
-#intro:after {
+/* line 125, less\slides.less */
+#slide1:after {
   content: '';
   display: block;
   position: absolute;
@@ -5202,34 +5230,57 @@ h3 {
   background-size: cover;
   z-index: 899;
 }
-/* line 87, less\slides.less */
-#about video::-webkit-media-controls {
+/* line 133, less\slides.less */
+#slide2 {
+  /*&:after {
+    .over-texture()
+  }*/
+}
+/* line 134, less\slides.less */
+#slide2 video::-webkit-media-controls {
   display: none;
 }
-/* line 91, less\slides.less */
-#about video {
-  position: absolute;
-  z-index: -1;
+/* line 142, less\slides.less */
+#slide2 video {
+  width: 90%;
+  height: 30%;
 }
-/* line 96, less\slides.less */
-#about:after {
-  content: '';
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: url('../images/over-texture.png') no-repeat center center;
-  background-size: cover;
-  z-index: 899;
+@media (min-width: 450px) {
+  /* line 146, less\slides.less */
+  #slide2 video {
+    height: 40%;
+  }
 }
-/* line 104, less\slides.less */
-#clients {
+@media (min-width: 768px) {
+  /* line 150, less\slides.less */
+  #slide2 video {
+    width: 50%;
+    position: absolute;
+    z-index: -1;
+  }
+}
+/* line 158, less\slides.less */
+#slide2 .text-container {
+  margin-left: auto;
+  margin-right: 5%;
+  width: 90%;
+  height: 50%;
+  font-size: 100%;
+}
+@media (min-width: 768px) {
+  /* line 165, less\slides.less */
+  #slide2 .text-container {
+    width: 45%;
+    height: auto;
+  }
+}
+/* line 175, less\slides.less */
+#slide4 {
   background-image: url('../images/slides/04.png');
+  background-color: white;
 }
-/* line 107, less\slides.less */
-#clients:after {
+/* line 179, less\slides.less */
+#slide4:after {
   content: '';
   display: block;
   position: absolute;
@@ -5241,12 +5292,13 @@ h3 {
   background-size: cover;
   z-index: 899;
 }
-/* line 115, less\slides.less */
-#contacts {
+/* line 187, less\slides.less */
+#slide5 {
   background-image: url('../images/slides/05.png');
+  background-color: white;
 }
-/* line 118, less\slides.less */
-#contacts:after {
+/* line 191, less\slides.less */
+#slide5:after {
   content: '';
   display: block;
   position: absolute;
@@ -5258,33 +5310,70 @@ h3 {
   background-size: cover;
   z-index: 899;
 }
-/* line 127, less\slides.less */
+/* line 200, less\slides.less */
 .works.work-01 {
   background-image: url('../images/works/01.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 131, less\slides.less */
+/* line 204, less\slides.less */
 .works.work-02 {
   background-image: url('../images/works/02.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 135, less\slides.less */
+/* line 208, less\slides.less */
 .works.work-03 {
   background-image: url('../images/works/03.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 139, less\slides.less */
+/* line 212, less\slides.less */
 .works.work-04 {
   background-image: url('../images/works/04.png');
   background-position: center center;
   background-size: cover;
 }
-/* line 143, less\slides.less */
+/* line 216, less\slides.less */
 .works.work-05 {
   background-image: url('../images/works/05.png');
   background-position: center center;
   background-size: cover;
+}
+/* line 221, less\slides.less */
+.works .text-container {
+  color: white;
+  position: relative;
+  width: 50%;
+  text-shadow: 20px 20px 5px rgba(0, 0, 0, 0.5);
+  float: right;
+  margin-right: 50px;
+}
+/* line 229, less\slides.less */
+.works .text-container a.btn {
+  color: white;
+  border-color: white;
+}
+/* line 233, less\slides.less */
+.works .text-container a.btn:hover {
+  border-color: #d98576;
+}
+/* line 238, less\slides.less */
+.works .text-container.t3d {
+  perspective: 1000px;
+  transform: skewX(20deg);
+}
+/* line 243, less\slides.less */
+.works .text-container.t3d .text-container-inner {
+  transform: rotateX(24deg) rotateY(-12deg);
+}
+/* line 249, less\slides.less */
+.works .text-container h2 {
+  color: white;
+  display: inline;
+  text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+/* line 255, less\slides.less */
+.works .text-container h4 {
+  margin: 0;
 }

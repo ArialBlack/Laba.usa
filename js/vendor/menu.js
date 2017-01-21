@@ -44,8 +44,6 @@
 				container = document.getElementById( 'perspective-container' ),
 				contentWrapper = document.getElementById( 'perspective-wrapper' );
 
-			console.log(container);
-
 			showMenu.addEventListener( clickevent, function( ev ) {
 				ev.stopPropagation();
 				ev.preventDefault();
