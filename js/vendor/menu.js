@@ -39,12 +39,12 @@
 			clickevent = mobilecheck() ? 'touchstart' : 'click';
 
 		function init() {
-			var showMenu = document.getElementById( 'showMenu' ),
+			var showMenu = $('.nav-toogle'),
 				perspectiveWrapper = document.getElementById( 'perspective' ),
 				container = document.getElementById( 'perspective-container' ),
 				contentWrapper = document.getElementById( 'perspective-wrapper' );
 
-			showMenu.addEventListener( clickevent, function( ev ) {
+			showMenu.click( function (ev) {
 				ev.stopPropagation();
 				ev.preventDefault();
 				docscroll = scrollY();

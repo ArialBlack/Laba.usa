@@ -2,7 +2,7 @@
     $(function() {
 
         function _resize(x1, x2) {
-            var fbp1 = 800,
+            var fbp1 = 830,
                 fbp2 = 1900,
                 calc = Math.min(100 * x1 / fbp1, 100 * x2 / fbp2),
                 res = calc.toFixed(2),
