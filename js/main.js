@@ -23,12 +23,12 @@
             resizeBaseFont();
 
             $('#main-slides').fullpage({
-                anchors: ['hello', 'about', 'works', 'clients', 'contacts'],
+                anchors: ['hello', 'about', 'branding', 'webdesign', 'webdevelopment', 'social', 'clients', 'contacts'],
                 menu: '#menu ul',
                 slidesNavigation: true,
                 navigation: true,
                 navigationPosition: 'right',
-                navigationTooltips: ['Hello', 'About us', 'Works', 'Partners', 'Contact us'],
+                navigationTooltips: ['Hello', 'About us', 'Branding', 'Web design', 'Web development', 'Social responsibility', 'Partners', 'Contact us'],
 
                 afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
                     console.log("slideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
