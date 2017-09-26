@@ -17,12 +17,13 @@
         }
 
         $(document).ready(function() {
+            var $slides = $('#main-slides');
 
             //var audio = new Audio('slide.m4a');
             //audio.play();
             resizeBaseFont();
 
-            $('#main-slides').fullpage({
+            $slides.fullpage({
                 anchors: ['hello', 'about', 'branding', 'webdesign', 'webdevelopment', 'social', 'clients', 'contacts'],
                 menu: '#menu ul',
                 slidesNavigation: true,
@@ -30,22 +31,68 @@
                 navigationPosition: 'right',
                 navigationTooltips: ['Hello', 'About us', 'Branding', 'Web design', 'Web development', 'Social responsibility', 'Partners', 'Contact us'],
 
-                afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
-                    console.log("slideLoad--" + "anchorLink: " + anchorLink + " index: " + index + " slideAnchor: " + slideAnchor + " slideIndex: " + slideIndex);
+                /*afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+                    var $listItem = $( ".section.active .slide.active" );
+                    var activeSlideIndex = $( ".section.active .slide" ).index($listItem);
 
-                },
+                    console.log(index,activeSlideIndex);
 
-                onSlideLeave: function(anchorLink, index, slideIndex, direction){
-                    console.log("----------------");
-                    console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
-                },
+                    $('#main-slides[class*="subslide-index"]').removeClass(function(index, css) {
+                        return (css.match(/\bsubslide-index-\S+/g) || []).join(' ');
+                    });
+
+                    $('#main-slides[class*="section-index"]').removeClass(function(index, css) {
+                        return (css.match(/\bsection-index-\S+/g) || []).join(' ');
+                    });
+
+                    $slides.addClass('section-index-' + index);
+
+                    if(activeSlideIndex > -1) {
+                        $slides.addClass('subslide-index-' + activeSlideIndex);
+                    }
+                },*/
+
+               // onSlideLeave: function(anchorLink, index, slideIndex, direction){
+                //    console.log("----------------");
+                   // console.log("onSlideLeave--" + "anchorLink: " + anchorLink + " index: " + index + " slideIndex: " + slideIndex + " direction: " + direction);
+               // },
 
                 afterRender: function () {
 
                     //playing the video
                     //$('#about video').get(0).play();
-                }
+                },
+
+                /*afterLoad: function(anchorLink, index){
+                    var $listItem = $( ".section.active .slide.active" );
+                    var activeSlideIndex = $( ".section.active .slide" ).index($listItem);
+
+                    console.log(index,activeSlideIndex);
+
+                    $('#main-slides[class*="subslide-index"]').removeClass(function(index, css) {
+                        return (css.match(/\bsubslide-index-\S+/g) || []).join(' ');
+                    });
+
+                    $('#main-slides[class*="section-index"]').removeClass(function(index, css) {
+                        return (css.match(/\bsection-index-\S+/g) || []).join(' ');
+                    });
+
+                    $slides.addClass('section-index-' + index);
+
+                    if(activeSlideIndex > -1) {
+                        $slides.addClass('subslide-index-' + activeSlideIndex);
+                    }
+                }*/
+
             });
+
+            //console.log('wp');
+
+            //var waypoints = $('.slide').waypoint({
+            //    handler: function(direction) {
+            //        console.log(this.element.id + ' hit');
+            //    }
+            //})
         });
 
         $('.modal')
@@ -59,7 +106,7 @@
                 if (preloadSRC) {
                     $.ajax({
                         cache: false,
-                        url: '/parts/' + preloadSRC,
+                        url: '/popups/' + preloadSRC,
                         success: function(data) {
                             $this.find('.modal-body .container').html(data).waitForImages(function() {
                                 console.log('loaded');

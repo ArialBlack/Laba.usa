@@ -1,0 +1,25 @@
+{
+  "name": "laba.usa",
+  "description": "static website for USA market",
+  "main": "index.js",
+  "authors": [
+    "ArialBlack"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "~2.9.2",
+    "bootstrap": "~3.3.7",
+    "Ionicons": "ionicons#~2.0.1",
+    "waitForImages": "~2.2.0",
+    "waypoints": "^4.0.1"
+  }
+}
