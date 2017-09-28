@@ -58,7 +58,7 @@ module.exports = function(grunt) {
             bake: {
                 files: [
                     'index.html',
-                    'htm/**/*.html'
+                    'htm/*.html'
                 ],
                 tasks: ['bake']
             },

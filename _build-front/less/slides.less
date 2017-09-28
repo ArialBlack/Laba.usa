@@ -308,6 +308,32 @@ h3 {
     background: @white;
   }
 
+  &.blue {
+    color: @blue;
+
+    .text-container {
+      color: @blue;
+
+      h4, h2 {
+        color: @blue;
+      }
+    }
+
+    .del {
+      background: @blue;
+    }
+  }
+
+  &.no-shadow {
+    .text-container {
+      text-shadow: none;
+
+      h4, h2 {
+        text-shadow: none;
+      }
+    }
+  }
+
   &.work-nazk {
     background: #4590be;
     background: -moz-linear-gradient(left, #4590be 0%, #30c5f2 100%);
@@ -316,31 +342,14 @@ h3 {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4590be', endColorstr='#30c5f2',GradientType=1 );
   }
 
+  &.work-hudson {
+    background-image: url('../images/works/hudson.jpg');
+    .slides();
+  }
+
   &.work-cfc {
     position: relative;
     background: none;
-    color: #374e73;
-
-    .text-container {
-      color: #374e73;
-      text-shadow: none;
-
-      h4, h2 {
-        color: #374e73;
-        text-shadow: none;
-      }
-
-      .btn {
-        color: #374e73;
-        border-color: #374e73;
-
-        &:hover {
-          background: #374e73;
-          border-color: #374e73;
-          color: white;
-        }
-      }
-    }
 
     .svg-container {
       width: 100%;
@@ -409,8 +418,27 @@ h3 {
 
   &.work-tax {
     //taxfromus
-    background-image: url('../images/works/01.png');
+    background-image: url('../images/works/tax.jpg');
     .slides();
+  }
+
+  &.work-vk {
+    //taxfromus
+    background-image: url('../images/works/vk/vk.jpg');
+    .slides();
+
+    .text-container {
+      color: @vk-green;
+
+      h2 {
+        color: @vk-green;
+        text-shadow: -1px 0 @vk-green, 0 1px @vk-green, 1px 0 @vk-green, 0 -1px @vk-green;
+      }
+
+      .del {
+        background: @vk-green;
+      }
+    }
   }
 
   &.work-gud {
@@ -437,6 +465,11 @@ h3 {
 
   &.work-fondexx {
     background-image: url('../images/works/fondexx/fondexx.jpg');
+    .slides();
+  }
+
+  &.work-bookbox {
+    background-image: url('../images/works/bookbox.jpg');
     .slides();
   }
 
@@ -477,7 +510,7 @@ h3 {
   .text-container {
     color: @white;
     //position: relative;
-    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
+    //text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.9);
     margin-right: 20px;
 
     @media (min-width:768px) {
@@ -497,12 +530,36 @@ h3 {
     @media (min-width: 1600px) {}
 
 
-    a.btn {
+    .btn {
       color: @white;
       border-color: @white;
 
       &:hover {
         border-color: @pale-red;
+      }
+
+      &.btn-blue {
+        color: @blue;
+        border-color: @blue;
+
+
+        &:hover {
+          background: @blue;
+          border-color: @blue;
+          color: white;
+        }
+      }
+
+      &.btn-green {
+        color: @vk-green;
+        border-color: @vk-green;
+
+
+        &:hover {
+          background: @vk-green;
+          border-color: @vk-green;
+          color: white;
+        }
       }
     }
 
