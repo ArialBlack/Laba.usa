@@ -1,0 +1,292 @@
+@main-text-color: #374e73;
+@line-stroke: #c2c9d5;
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -80%, 0);
+    transform: translate3d(0, -80%, 0);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 80%, 0);
+    transform: translate3d(0, 80%, 0);
+    opacity: 0;
+  }
+
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes appearance {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoAppearance {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes dash {
+  0% {
+    stroke-dasharray: 0 200;
+    stroke-dashoffset: 250;
+    stroke-width: 1;
+  }
+  10% {
+    stroke-dasharray: 15 200;
+    stroke-dashoffset: 50;
+    stroke-width: 1;
+  }
+
+  20% {
+    stroke-dasharray: 15 200;
+    stroke-dashoffset: 250;
+    stroke-width: 1;
+  }
+
+  26% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    stroke-dasharray: 10 500;
+    stroke-dashoffset: 500;
+    stroke-width: 0.5;
+    opacity: 0.5;
+  }
+
+  25% {
+    stroke-dasharray: 10 625;
+    stroke-width: 0.5;
+    opacity: 0.7;
+  }
+
+  50% {
+    stroke-dasharray: 10 750;
+    stroke-width: 0.5;
+    opacity: 0.7;
+  }
+
+  75% {
+    stroke-dasharray: 20 875;
+    stroke-width: 0.5;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dasharray: 10 1000;
+    stroke-dashoffset: 300;
+    stroke-width: 0.75;
+    opacity: 1;
+  }
+
+  //100% {
+  //  opacity: 1;
+  //}
+}
+
+@keyframes topStoryLineAnimation {
+  0% {
+    stroke-dasharray: 10 500;
+    stroke-dashoffset: 500;
+    stroke-width: 0.5;
+    opacity: 0.5;
+  }
+
+  12.5% {
+    stroke-dasharray: 10 625;
+    stroke-dashoffset: 500;
+    stroke-width: 0.5;
+    opacity: 0.5;
+  }
+
+  25% {
+    stroke-dasharray: 10 750;
+    stroke-width: 0.5;
+    opacity: 0.7;
+  }
+
+  37.5% {
+    stroke-dasharray: 10 875;
+    stroke-width: 0.5;
+    opacity: 0.7;
+  }
+
+  50% {
+    stroke-dasharray: 10 1000;
+    stroke-dashoffset: 300;
+    stroke-width: 0.75;
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+
+  //100% {
+  //  opacity: 1;
+  //}
+}
+
+@keyframes globeAnimation {
+  10% {
+    stroke: @main-text-color;
+    stroke-width: 0.3;
+  }
+
+  22% {
+    stroke: @line-stroke;
+    stroke-width: 0.25;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  40% {
+    stroke: #c2c9d5;
+    stroke-width: 0.25;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes linesOnLogo {
+  0% {
+    opacity: 0.9;
+  }
+
+  33% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes normalLineAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  33% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes logoAppearance {
+  0% {
+    opacity: 0;
+  }
+  33% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes firstLineCompaniesAnimation {
+  0% {
+    margin-left: -55%;
+  }
+  50% {
+    margin-left: 40%;
+  }
+
+  100% {
+    margin-left: -55%;
+  }
+}
+
+@keyframes secondLineCompaniesAnimation {
+  0% {
+    margin-right: -145%;
+  }
+
+  50% {
+    margin-right: 55%;
+  }
+
+  100% {
+    margin-right: -145%;
+  }
+}
+
+@keyframes thirdLineCompaniesAnimation {
+  0% {
+    margin-left: -62%;
+  }
+  50% {
+    margin-left: 44%;
+  }
+
+  100% {
+    margin-left: -62%;
+  }
+}
+
+@keyframes softHideAnimation {
+  0% {
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0.99;
+
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes softHideAnimation {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0.99;
+  }
+  100% {
+    opacity: 1;
+  }
+}
