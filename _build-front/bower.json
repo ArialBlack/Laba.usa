@@ -19,7 +19,6 @@
     "fullpage.js": "~2.9.2",
     "bootstrap": "~3.3.7",
     "Ionicons": "ionicons#~2.0.1",
-    "waitForImages": "~2.2.0",
-    "waypoints": "^4.0.1"
+    "waitForImages": "~2.2.0"
   }
 }

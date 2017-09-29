@@ -86,6 +86,8 @@
 
             });
 
+            //shineTitles();
+
             //console.log('wp');
 
             //var waypoints = $('.slide').waypoint({
