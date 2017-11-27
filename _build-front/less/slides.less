@@ -84,6 +84,7 @@ h3 {
     @media (min-width:1200px) {}
 
     @media (min-width: 1600px) {}
+
   }
 
   h4 {
@@ -97,7 +98,7 @@ h3 {
     @media (min-width:768px) {  }
 
     @media (min-width:992px) {
-      font-size: 2em;
+      font-size: 2.5em;
     }
 
     @media (min-width:1200px) {}
@@ -190,18 +191,69 @@ h3 {
   background-position: right bottom;
   background-size: contain;
 
-  &:after {
-    .over-texture()
+  &:before {
+   .over-texture();
+    z-index: 901;
+    //display: none;
   }
 
   .text-container {
 
     @media (min-width:768px) {
-      width: 40%;
+      width: 60%;
       height: auto;
       float: left;
       position: relative;
       z-index: @z-btn;
+    }
+  }
+
+  h2 {
+    margin-left: 60px;
+  }
+
+  .clients-list {
+    margin-left: 40px;
+    padding-left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+
+    .hudson-bg {
+      padding: 10px;
+      background: #019c9e;
+    }
+
+    @b: 160px;
+    @p: 20px;
+
+    li {
+      order: 0;
+      flex: 0 1 auto;
+      align-self: auto;
+      width: @b;
+      height: @b;
+      list-style: none;
+      padding: @p;
+
+      div {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-content: stretch;
+        align-items: center;
+        width: @b - @p;
+        height: @b - @p;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+      }
     }
   }
 }
@@ -348,6 +400,11 @@ h3 {
   &.work-hudson {
     background-image: url('../images/works/hudson.jpg');
     .slides();
+
+    h3,
+    .text {
+      text-shadow: 2px 2px 3px rgba(0, 0, 0, 1);
+    }
   }
 
   &.work-cfc {
@@ -595,7 +652,6 @@ h3 {
 
     h2 {
       color: @white;
-      //display: inline;
 
       @media (min-width:768px) {
         text-shadow: -1px 0 @white, 0 1px @white, 1px 0 @white, 0 -1px @white;
@@ -627,5 +683,40 @@ h3 {
       font-size: 2rem;
       text-align: center;
     }
+  }
+}
+
+form {
+  padding: 40px;
+  background: rgba(0,0,0, 0.5);
+
+  h2 {
+    color: white;
+    margin-top: 0;
+    text-transform: uppercase;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 5px 10px;
+  }
+
+  textarea {
+    resize: vertical;
+  }
+
+  .btn.btn-outline {
+    width: auto;
+    background: none;
+    font-size: 1em;
+    color: @white;
+    border-color: @white;
+
+    &:hover {
+      border-color: @pale-red;
+    }
+
   }
 }

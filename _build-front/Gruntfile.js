@@ -8,9 +8,9 @@ module.exports = function(grunt) {
             development: {
                 options: {
                     paths: ['less'],
-                    compress: false,
-                    cleancss: true,
-                    dumpLineNumbers: 'comments'
+                    compress: true,
+                    sourceMap: true,
+                    cleancss: true
                 },
                 files: {
                     '../css/style.css': 'less/style.less'
@@ -82,12 +82,13 @@ module.exports = function(grunt) {
         
         postcss: {
             options: {
-              processors: [
+                map: true,
+                processors: [
                 require('autoprefixer')({browsers: ['last 2 versions', 'ie 10']}),
               ]
             },
             dist: {
-              src: '../css/style.css'
+              src: '../css/style.css',
             }
         }
 
