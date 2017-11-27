@@ -5,10 +5,10 @@ Variables you can change
 ============================================== */
 
 $mailto = 'andreyturik@gmail.com'; // Enter your mail addres here. 
-$subject = 'Придбати мед'; // Enter the subject here.
+$subject = 'Mail from Laba.us'; // Enter the subject here.
 
-$error_message = 'Помилка при надсиланні'; // Message displayed if an error occurs
-$success_message = 'Відправлено'; // Message displayed id the email has been sent successfully
+$error_message = 'Error'; // Message displayed if an error occurs
+$success_message = 'Sended'; // Message displayed id the email has been sent successfully
 
 /* ==============================================
 Do not modify anything below
@@ -32,17 +32,27 @@ function validateEmail($email) {
 
 if((strlen($frm_name) < 1 ) || (strlen($frm_email) < 1 ) || (strlen($frm_message) < 1 ) || validateEmail($frm_email) == FALSE ) {
 
+  header('Refresh: 5; URL=http://schroedingerscatlab.us');
 	echo($error_message);
+	echo('<p>You are being automatically redirected to a new location.<br />
+    If your browser does not redirect you in 5 seconds, or you do
+    not wish to wait, <a href="http://schroedingerscatlab.us">click here</a>.</p>');
 
 } else {
 
 	if( mail($mailto, $subject, $message, $headers) ) {
-		
+    header('Refresh: 5; URL=http://schroedingerscatlab.us');
 		echo($success_message);
+    echo('<p>You are being automatically redirected to a new location.<br />
+    If your browser does not redirect you in 5 seconds, or you do
+    not wish to wait, <a href="http://schroedingerscatlab.us">click here</a>.</p>');
 
 	} else {
-
+    header('Refresh: 5; URL=http://schroedingerscatlab.us');
 		echo($error_message);
+    echo('<p>You are being automatically redirected to a new location.<br />
+    If your browser does not redirect you in 5 seconds, or you do
+    not wish to wait, <a href="http://schroedingerscatlab.us">click here</a>.</p>');
 
 	}
 
